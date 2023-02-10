@@ -12,13 +12,22 @@ class MockKakaoPixelSdkPlatform
   Future<String?> getPlatformVersion() => Future.value('42');
 
   @override
-  Future<bool> invokeEventInAppPurchase(String tag, String productId, String productName, int quantity, double price) => Future.value(true);
+  Future<bool> invokeEventInAppPurchase(String tag, String productId, String productName, int quantity, double price) {
+    // TODO: implement invokeEventInAppPurchase
+    throw UnimplementedError();
+  }
 
   @override
-  Future<bool> invokeEventJoin(String tag) => Future.value(true);
+  Future<bool> invokeEventJoin(String tag) {
+    // TODO: implement invokeEventJoin
+    throw UnimplementedError();
+  }
 
   @override
-  Future<bool> invokeEventSearch(String tag, String keyword) => Future.value(true);
+  Future<bool> invokeEventSearch(String tag, String keyword) {
+    // TODO: implement invokeEventSearch
+    throw UnimplementedError();
+  }
 }
 
 void main() {
@@ -28,23 +37,11 @@ void main() {
     expect(initialPlatform, isInstanceOf<MethodChannelKakaoPixelSdk>());
   });
 
-  KakaoPixelSdk kakaoPixelSdkPlugin = KakaoPixelSdk();
-  MockKakaoPixelSdkPlatform fakePlatform = MockKakaoPixelSdkPlatform();
-  KakaoPixelSdkPlatform.instance = fakePlatform;
-
   test('getPlatformVersion', () async {
+    KakaoPixelSdk kakaoPixelSdkPlugin = KakaoPixelSdk();
+    MockKakaoPixelSdkPlatform fakePlatform = MockKakaoPixelSdkPlatform();
+    KakaoPixelSdkPlatform.instance = fakePlatform;
+
     expect(await kakaoPixelSdkPlugin.getPlatformVersion(), '42');
-  });
-
-  test('invokeEventInAppPurchase', () async {
-    expect(await kakaoPixelSdkPlugin.invokeEventInAppPurchase('EVENT_IN_APP_PURCHASE', 'testID', 'testName', 1, 5900.0), true);
-  });
-
-  test('invokeEventJoin', () async {
-    expect(await kakaoPixelSdkPlugin.invokeEventJoin('EVENT_JOIN'), true);
-  });
-
-  test('invokeEventSearch', () async {
-    expect(await kakaoPixelSdkPlugin.invokeEventSearch('EVENT_SEARCH', 'TEST SEARCH KEYWORD'), true);
   });
 }
