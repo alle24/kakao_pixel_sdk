@@ -23,19 +23,11 @@ abstract class KakaoPixelSdkPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
-  }
+  Future<String?> getPlatformVersion();
 
-  Future<bool> invokeEventJoin(String tag) {
-    throw UnimplementedError('invokeEventJoin() has not been implemented.');
-  }
+  Future<bool> invokeEventJoin(String tag);
 
-  Future<bool> invokeEventSearch(String tag, String keyword) {
-    throw UnimplementedError('invokeEventSearch() has not been implemented.');
-  }
+  Future<bool> invokeEventSearch(String tag, String keyword);
 
-  Future<bool> invokeEventInAppPurchase(String tag, String productId, String productName, int quantity, double price) {
-    throw UnimplementedError('invokeEventInAppPurchase() has not been implemented.');
-  }
+  Future<bool> invokeEventInAppPurchase(String tag, String productId, String productName, int quantity, double price);
 }
