@@ -23,7 +23,7 @@ class KakaoPixelSdkPlugin : FlutterPlugin, MethodCallHandler {
 
     override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
         channel = MethodChannel(flutterPluginBinding.binaryMessenger, "kakao_pixel_sdk")
-        channel.setMethodCallHandler(this)dd
+        channel.setMethodCallHandler(this)
     }
 
     private fun paramCheck(param: Any?): Boolean {
