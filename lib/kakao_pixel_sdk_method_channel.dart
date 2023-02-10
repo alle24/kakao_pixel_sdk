@@ -29,7 +29,7 @@ class MethodChannelKakaoPixelSdk extends KakaoPixelSdkPlatform {
 
   @override
   Future<bool> invokeEventJoin(String tag) async {
-    final result = await methodChannel.invokeMethod<bool>('invokeEventJoin', {'tag'});
+    final result = await methodChannel.invokeMethod<bool>('invokeEventJoin', {'tag': tag});
     return result ?? false;
   }
 }
